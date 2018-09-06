@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">{{onlyOdd?'Show Even':'Show Odd'}}</button>
+      <br><br>
+      <div *ngIf="!onlyOdd">
+        <ul class="list-group">
+          <li *ngFor="let num of evens"
+            [ngClass]="{'even': num % 2 === 0}"
+            [ngStyle]="{ 'background-color': num%2 === 0 ? 'beige':'yellow'}"
+            class="list-group-item">
+            {{num}}
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="onlyOdd">
+        <ul class="list-group">
+          <li *ngFor="let num of odds"
+            class="list-group-item"
+            [ngClass]="{'odd': num % 2 !== 0}">
+            {{num}}
+          </li>
+        </ul>
+      </div>
+      <p appBetterHighlight> 
+        Keep Silent and Focus.
+      </p>
+      <ng-template [ngIf]="onlyOdd">
+        <p appBasicHighlight>Above are Only odd</p>
+      </ng-template>
+
+    </div>
+  </div>
+</div>

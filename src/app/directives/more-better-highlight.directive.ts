@@ -6,12 +6,11 @@ import { Directive, HostListener, Input, HostBinding, OnInit } from '@angular/co
 export class MoreBetterHighlightDirective implements OnInit{
 
   @Input() defaultColor:string = 'transparent';
-  @Input() highlightColor:string = 'red';
+  @Input() highlightColor:string = 'pink';
 
   @HostBinding('style.backgroundColor') bgColor:string = '';
 
   constructor() { 
- 
   }
 
   ngOnInit(): void {
@@ -21,10 +20,8 @@ export class MoreBetterHighlightDirective implements OnInit{
   @HostListener('mouseenter') mousein(event: Event){
     this.bgColor = this.highlightColor;
   }
+  
   @HostListener('mouseleave') mouseout(event: Event){
     this.bgColor = this.defaultColor;
-   
   }
-
-
 }

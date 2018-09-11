@@ -6,13 +6,17 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { BetterHighlightDirective } from './directives/better-highlight.directive';
 import { MoreBetterHighlightDirective } from './directives/more-better-highlight.directive';
+import { UnlessDirective } from './directives/unless.directive';
+import { DropdownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicHighlightDirective,
     BetterHighlightDirective,
-    MoreBetterHighlightDirective
+    MoreBetterHighlightDirective,
+    UnlessDirective,
+    DropdownDirective
   ],
   imports: [
     BrowserModule,
